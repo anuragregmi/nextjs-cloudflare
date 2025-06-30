@@ -4,7 +4,7 @@ pages_build_output_dir = ".vercel/output/static"
 compatibility_flags = ["nodejs_compat"]
 
 # KV namespace binding for Pages Functions if deploying from command line
-# [[kv_namespaces]]
-# binding = "kv_store"
+[[kv_namespaces]]
+binding = "kv_store"
 # id = ""
 # preview_id = "" 
