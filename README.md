@@ -45,6 +45,27 @@ Push your code to GitHub, GitLab, or Bitbucket.
 
 ---
 
+## 🚀 Cloudflare Pages + Next.js Adapter
+
+This project uses the official [@cloudflare/next-on-pages](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nextjs-site/) adapter for Next.js on Cloudflare Pages.
+
+### Build & Output Settings
+- **Build command:** `npm run build` (runs `npx next-on-pages build`)
+- **Output directory:** `.output`
+
+### Steps
+1. Install dependencies:
+   ```sh
+   npm install
+   ```
+2. Build for Cloudflare Pages:
+   ```sh
+   npm run build
+   ```
+3. Deploy via the Cloudflare Pages dashboard (link your repo, set build command/output as above).
+
+---
+
 ## Notes
 - You do **not** need to fill in `account_id`, `id`, or `preview_id` in `wrangler.toml` when deploying via the dashboard.
 - Do **not** commit secrets or API tokens to your repo.
