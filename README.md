@@ -43,6 +43,14 @@ Push your code to GitHub, GitLab, or Bitbucket.
   - `title`
   - `contact`
 
+### Cloudflare Account/Environment Setup
+- Copy `wrangler.toml.example` to `wrangler.toml` in your project root.
+- Set the correct `id` and `preview_id` for your KV namespace(s) in `wrangler.toml`.
+- Set the `compatibility_date` to the current date (e.g., `2024-06-30`).
+- If you see Node.js compatibility warnings, add `compatibility_flags = ["nodejs_compat"]` to your `wrangler.toml`.
+- You can find these IDs in the Cloudflare dashboard under Workers & Pages > KV.
+- When linking your repo in the Cloudflare Pages dashboard, set up the KV binding in the UI as well.
+
 ---
 
 ## 🚀 Cloudflare Pages + Next.js Adapter
