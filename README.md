@@ -50,8 +50,8 @@ Push your code to GitHub, GitLab, or Bitbucket.
 This project uses the official [@cloudflare/next-on-pages](https://developers.cloudflare.com/pages/framework-guides/deploy-a-nextjs-site/) adapter for Next.js on Cloudflare Pages.
 
 ### Build & Output Settings
-- **Build command:** `npm run build` (runs `npx next-on-pages build`)
-- **Output directory:** `.output`
+- **Build command:** `npm run build-cloudflare` (runs `npx next-on-pages build`)
+- **Output directory:** `.vercel/output/static`
 
 ### Steps
 1. Install dependencies:
