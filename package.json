@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npx next-on-pages build",
+    "build": "next build",
+    "build-cloudflare": "next-on-pages",
     "start": "next start",
     "lint": "next lint"
   },
