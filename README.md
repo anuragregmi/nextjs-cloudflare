@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js + Cloudflare Workers + KV Example
 
-## Getting Started
+This project is a Next.js app designed to run on Cloudflare Workers, using Cloudflare KV for dynamic content storage. It uses Tailwind CSS and shadcn/ui for beautiful UI components.
 
-First, run the development server:
+## Features
+- **Homepage** (`/`): Displays `about_us` and `title` from Cloudflare KV.
+- **Contact Page** (`/contact`): Displays `contact` information from Cloudflare KV.
+- **Cloudflare KV**: Used for dynamic content storage.
+- **shadcn/ui + Tailwind CSS**: For modern, beautiful UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Deployment (Cloudflare Dashboard)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can deploy this app by linking your repository directly from the Cloudflare dashboard. No need to manually fill in secrets or IDs in `wrangler.toml`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Push Your Code
+Push your code to GitHub, GitLab, or Bitbucket.
 
-## Learn More
+### 2. Link Your Repo in Cloudflare
+- Go to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
+- Navigate to **Pages** (for static/Jamstack) or **Workers** (for serverless/edge).
+- Click **Create Project** and connect your Git provider.
+- Select your repository.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Configure Build Settings
+- **Framework preset**: Next.js
+- **Build command**: `npm run build`
+- **Output directory**: `.next`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 4. Add KV Namespace Binding
+- In the Cloudflare dashboard, go to your project **Settings** > **Functions** (or **Environment Variables**).
+- Add a KV namespace binding:
+  - **Binding name**: `kv_store` (must match your code and `wrangler.toml`)
+  - **Select or create a KV namespace**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 5. Deploy
+- Cloudflare will build and deploy your app automatically on every push.
 
-## Deploy on Vercel
+### 6. Populate KV Store
+- Use the Cloudflare dashboard or Wrangler CLI to add the following keys to your KV namespace:
+  - `about_us`
+  - `title`
+  - `contact`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Notes
+- You do **not** need to fill in `account_id`, `id`, or `preview_id` in `wrangler.toml` when deploying via the dashboard.
+- Do **not** commit secrets or API tokens to your repo.
+- For manual deployments with Wrangler CLI, you will need to fill in the IDs in `wrangler.toml`.
+
+---
+
+## Useful Links
+- [Cloudflare Pages Docs](https://developers.cloudflare.com/pages/)
+- [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)
+- [Cloudflare KV Docs](https://developers.cloudflare.com/kv/)
+- [shadcn/ui Docs](https://ui.shadcn.com/)
+- [Next.js Docs](https://nextjs.org/docs)

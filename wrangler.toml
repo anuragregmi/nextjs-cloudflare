@@ -1,0 +1,10 @@
+name = "nextjs-cloudflare"
+type = "javascript"
+account_id = ""
+workers_dev = true
+compatibility_date = "2024-06-30"
+
+[[kv_namespaces]]
+binding = "kv_store"
+id = ""
+preview_id = "" 
