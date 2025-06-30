@@ -1,3 +1,4 @@
+'use server';
 // Utility for accessing Cloudflare KV in a Next.js app on Cloudflare Workers
 
 declare global {
