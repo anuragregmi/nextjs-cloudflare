@@ -2,9 +2,8 @@
 // Utility for accessing Cloudflare KV in a Next.js app on Cloudflare Workers
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
-
 export async function getKVValue(key: string): Promise<string | null> {
-  const { env } = getCloudflareContext();
+  const { env } = await getCloudflareContext({ async: true });
   if (typeof env.kv_store === 'undefined') {
     throw new Error('KV store is not available in this environment.');
   }
