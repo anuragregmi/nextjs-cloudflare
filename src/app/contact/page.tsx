@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
-export default async function ContactPage() {
+async function ContactPageContent() {
   const contact = await getContact();
 
   return (
@@ -19,4 +19,6 @@ export default async function ContactPage() {
       </Card>
     </main>
   );
-} 
+}
+
+export default ContactPageContent; 

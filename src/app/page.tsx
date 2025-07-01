@@ -5,7 +5,7 @@ import Link from "next/link";
 export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
-export default async function Home() {
+async function HomePageContent() {
   const [title, aboutUs] = await Promise.all([
     getTitle(),
     getAboutUs(),
@@ -114,3 +114,5 @@ export default async function Home() {
     </div>
   );
 }
+
+export default HomePageContent;
