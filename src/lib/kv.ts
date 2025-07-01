@@ -1,17 +1,14 @@
 'use server';
 // Utility for accessing Cloudflare KV in a Next.js app on Cloudflare Workers
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
-declare global {
-  // Cloudflare Workers inject the KV namespace as a global variable
-  // eslint-disable-next-line no-var
-  var kv_store: { get: (key: string) => Promise<string | null> };
-}
 
 export async function getKVValue(key: string): Promise<string | null> {
-  if (typeof globalThis.kv_store === 'undefined') {
+  const { env } = getCloudflareContext();
+  if (typeof env.kv_store === 'undefined') {
     throw new Error('KV store is not available in this environment.');
   }
-  return await globalThis.kv_store.get(key);
+  return await env.kv_store.get(key);
 }
 
 export async function getAboutUs(): Promise<string | null> {
