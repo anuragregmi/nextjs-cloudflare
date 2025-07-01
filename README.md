@@ -13,7 +13,6 @@ This project is a Next.js app designed to run on Cloudflare Workers, using Cloud
 ## 🚀 Deployment (Cloudflare Workers)
 
 ### 1. Configure wrangler.toml
-- Copy `wrangler.toml.example` to `wrangler.toml` in your project root.
 - Set your `account_id`, `kv_namespaces.id`, and `kv_namespaces.preview_id` in `wrangler.toml` (find these in the Cloudflare dashboard).
 - Set the `compatibility_date` to the current date (e.g., `2024-06-30`).
 - If you see Node.js compatibility warnings, add `compatibility_flags = ["nodejs_compat"]` to your `wrangler.toml`.
