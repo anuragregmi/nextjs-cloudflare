@@ -2,10 +2,7 @@ import { getAboutUs, getTitle } from "@/lib/kv";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
-export const runtime = 'edge';
-export const dynamic = 'force-dynamic';
-
-async function HomePageContent() {
+export default async function Home() {
   const [title, aboutUs] = await Promise.all([
     getTitle(),
     getAboutUs(),
@@ -114,5 +111,3 @@ async function HomePageContent() {
     </div>
   );
 }
-
-export default HomePageContent;

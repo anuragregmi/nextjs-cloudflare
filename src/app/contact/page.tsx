@@ -1,10 +1,7 @@
 import { getContact } from "@/lib/kv";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-export const runtime = 'edge';
-export const dynamic = 'force-dynamic';
-
-async function ContactPageContent() {
+export default async function Contact() {
   const contact = await getContact();
 
   return (
@@ -19,6 +16,4 @@ async function ContactPageContent() {
       </Card>
     </main>
   );
-}
-
-export default ContactPageContent; 
+} 
